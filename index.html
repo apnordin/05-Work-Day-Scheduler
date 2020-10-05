@@ -240,6 +240,21 @@
         })
       }
 
+
+      // Changing Input Box Colors Subject to Time
+
+      var time = moment().format('HH');
+      console.log('time =', time + "h");
+
+      if (time == 9) {
+        $(agendaItem1).addClass('present');
+      } else if (time > 9) {
+        $(agendaItem1).addClass('past');
+      } else if (time < 9) {
+        $(agendaItem1).addClass('future');
+      }
+
+
     })
 
   </script>
