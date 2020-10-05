@@ -25,57 +25,57 @@
 
     <div class="row">
       <div class="col-sm-2 hour"></br>9am</div>
-      <textarea class="col-sm-8 agendaItem"></textarea>
-      <button class="col-sm-2 saveBtn"></button>
+      <textarea id="agendaItem1" class="col-sm-8"></textarea>
+      <button id="save1" class="col-sm-2 saveBtn"></button>
     </div>
 
 
     <div class="row">
       <div class="col-sm-2 hour"></br>10am</div>
-      <textarea class="col-sm-8 agendaItem"></textarea>
-      <button class="col-sm-2 saveBtn"></button>
+      <textarea id="agendaItem2" class="col-sm-8 agendaItem"></textarea>
+      <button id="save2" class="col-sm-2 saveBtn"></button>
     </div>
 
     <div class="row">
       <div class="col-sm-2 hour"></br>11am</div>
-      <textarea class="col-sm-8 agendaItem"></textarea>
-      <button class="col-sm-2 saveBtn"></button>
+      <textarea id="agendaItem3" class="col-sm-8 agendaItem"></textarea>
+      <button id="save3" class="col-sm-2 saveBtn"></button>
     </div>
 
     <div class="row">
       <div class="col-sm-2 hour"></br>12pm</div>
-      <textarea class="col-sm-8 agendaItem"></textarea>
-      <button class="col-sm-2 saveBtn"></button>
+      <textarea id="agendaItem4" class="col-sm-8 agendaItem"></textarea>
+      <button id="save4" class="col-sm-2 saveBtn"></button>
     </div>
 
     <div class="row">
       <div class="col-sm-2 hour"></br>1pm</div>
-      <textarea class="col-sm-8"></textarea>
-      <button class="col-sm-2 saveBtn"></button>
+      <textarea id="agendaItem5" class="col-sm-8"></textarea>
+      <button id="save5" class="col-sm-2 saveBtn"></button>
     </div>
 
     <div class="row">
       <div class="col-sm-2 hour"></br>2pm</div>
-      <textarea class="col-sm-8"></textarea>
-      <button class="col-sm-2 saveBtn"></button>
+      <textarea id="agendaItem6" class="col-sm-8"></textarea>
+      <button id="save6" class="col-sm-2 saveBtn"></button>
     </div>
 
     <div class="row">
       <div class="col-sm-2 hour"></br>3pm</div>
-      <textarea class="col-sm-8"></textarea>
-      <button class="col-sm-2 saveBtn"></button>
+      <textarea id="agendaItem7" class="col-sm-8"></textarea>
+      <button id="save7" class="col-sm-2 saveBtn"></button>
     </div>
 
     <div class="row">
       <div class="col-sm-2 hour"></br>4pm</div>
-      <textarea class="col-sm-8"></textarea>
-      <button class="col-sm-2 saveBtn"></button>
+      <textarea id="agendaItem8" class="col-sm-8"></textarea>
+      <button id="save8" class="col-sm-2 saveBtn"></button>
     </div>
 
     <div class="row">
       <div class="col-sm-2 hour"></br>5pm</div>
-      <textarea class="col-sm-8"></textarea>
-      <button class="col-sm-2 saveBtn"></button>
+      <textarea id="agendaItem9" class="col-sm-8"></textarea>
+      <button id="save9" class="col-sm-2 saveBtn"></button>
     </div>
 
   </div>
@@ -97,34 +97,136 @@
       $("#currentDay").text(moment(today).format('dddd MMM Do YY'));
 
 
-      // Enter/store calendar agenda items
+      // Calendar Input Variables
 
-      var agendaInput = document.querySelector('.agendaItem');
-      var saveButton = document.querySelector('.saveBtn');
+      var agendaInput1 = document.querySelector('#agendaItem1');
+      var agendaInput2 = document.querySelector('#agendaItem2');
+      var agendaInput3 = document.querySelector('#agendaItem3');
+      var agendaInput4 = document.querySelector('#agendaItem4');
+      var agendaInput5 = document.querySelector('#agendaItem5');
+      var agendaInput6 = document.querySelector('#agendaItem6');
+      var agendaInput7 = document.querySelector('#agendaItem7');
+      var agendaInput8 = document.querySelector('#agendaItem8');
+      var agendaInput9 = document.querySelector('#agendaItem9');
 
-      renderLastInput();
+      // Save Button Variables
 
-      function renderLastInput() {
+      var saveButton1 = document.querySelector('#save1');
+      var saveButton2 = document.querySelector('#save2');
+      var saveButton3 = document.querySelector('#save3');
+      var saveButton4 = document.querySelector('#save4');
+      var saveButton5 = document.querySelector('#save5');
+      var saveButton6 = document.querySelector('#save6');
+      var saveButton7 = document.querySelector('#save7');
+      var saveButton8 = document.querySelector('#save8');
+      var saveButton9 = document.querySelector('#save9');
 
-        var agendaItem = localStorage.getItem("agendaItem");
+      //Local Storage (set and recall) for each input/button combination
 
-        agendaInput.textContent = agendaItem;
+      renderLastInput1();
+      renderLastInput2();
+      renderLastInput3();
+      renderLastInput4();
+      renderLastInput5();
+      renderLastInput6();
+      renderLastInput7();
+      renderLastInput8();
+      renderLastInput9();
 
-        saveButton.addEventListener('click', function (save) {
-          console.log('clicked');
+      function renderLastInput1() {
+        var agendaItem1 = localStorage.getItem("agendaItem1");
+        agendaInput1.textContent = agendaItem1;
+        saveButton1.addEventListener('click', function (save) {
+          console.log('clicked1');
           event.preventDefault();
-
-          var agendaItem = document.querySelector('.agendaItem').value;
-
-          localStorage.setItem('agendaItem', agendaItem);
-          renderLastInput();
-          console.log('agendaItem', agendaItem);
-
+          var agendaItem1 = document.querySelector('#agendaItem1').value;
+          localStorage.setItem('agendaItem1', agendaItem1);
+          console.log('agendaItem1', agendaItem1);
         })
+      }
 
+      function renderLastInput2() {
+        var agendaItem2 = localStorage.getItem("agendaItem2");
+        agendaInput2.textContent = agendaItem2;
+        saveButton2.addEventListener('click', function (save) {
+          event.preventDefault();
+          var agendaItem2 = document.querySelector('#agendaItem2').value;
+          localStorage.setItem('agendaItem2', agendaItem2);
+        })
+      }
+
+      function renderLastInput3() {
+        var agendaItem3 = localStorage.getItem("agendaItem3");
+        agendaInput3.textContent = agendaItem3;
+        saveButton3.addEventListener('click', function (save) {
+          event.preventDefault();
+          var agendaItem3 = document.querySelector('#agendaItem3').value;
+          localStorage.setItem('agendaItem3', agendaItem3);
+        })
+      }
+
+      function renderLastInput4() {
+        var agendaItem4 = localStorage.getItem("agendaItem4");
+        agendaInput4.textContent = agendaItem4;
+        saveButton4.addEventListener('click', function (save) {
+          event.preventDefault();
+          var agendaItem4 = document.querySelector('#agendaItem4').value;
+          localStorage.setItem('agendaItem4', agendaItem4);
+        })
+      }
+
+      function renderLastInput5() {
+        var agendaItem5 = localStorage.getItem("agendaItem5");
+        agendaInput5.textContent = agendaItem5;
+        saveButton5.addEventListener('click', function (save) {
+          event.preventDefault();
+          var agendaItem5 = document.querySelector('#agendaItem5').value;
+          localStorage.setItem('agendaItem5', agendaItem5);
+        })
+      }
+
+      function renderLastInput6() {
+        var agendaItem6 = localStorage.getItem("agendaItem6");
+        agendaInput6.textContent = agendaItem6;
+        saveButton6.addEventListener('click', function (save) {
+          event.preventDefault();
+          var agendaItem6 = document.querySelector('#agendaItem6').value;
+          localStorage.setItem('agendaItem6', agendaItem6);
+        })
+      }
+
+      function renderLastInput7() {
+        var agendaItem7 = localStorage.getItem("agendaItem7");
+        agendaInput7.textContent = agendaItem7;
+        saveButton7.addEventListener('click', function (save) {
+          event.preventDefault();
+          var agendaItem7 = document.querySelector('#agendaItem7').value;
+          localStorage.setItem('agendaItem7', agendaItem7);
+        })
+      }
+
+      function renderLastInput8() {
+        var agendaItem8 = localStorage.getItem("agendaItem8");
+        agendaInput8.textContent = agendaItem8;
+        saveButton8.addEventListener('click', function (save) {
+          event.preventDefault();
+          var agendaItem8 = document.querySelector('#agendaItem8').value;
+          localStorage.setItem('agendaItem8', agendaItem8);
+        })
+      }
+
+      function renderLastInput9() {
+        var agendaItem9 = localStorage.getItem("agendaItem9");
+        agendaInput9.textContent = agendaItem9;
+        saveButton9.addEventListener('click', function (save) {
+          event.preventDefault();
+          var agendaItem9 = document.querySelector('#agendaItem9').value;
+          localStorage.setItem('agendaItem9', agendaItem9);
+        })
       }
 
     })
+
   </script>
 
 </body>
