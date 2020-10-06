@@ -11,8 +11,11 @@
 
 - App uses Moment.js library to work with date and time
 
-Screenshot:
+## Screenshot:
 <img src="work-day-scheduler.jpg" alt="screenshot">
 
+## Links:
+
 GitHub Repo: https://github.com/apnordin/05-Work-Day-Scheduler
+
 Deployed App: https://apnordin.github.io/05-Work-Day-Scheduler/
